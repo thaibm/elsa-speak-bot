@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 		joined_date: {
 			type: DataTypes.DATEONLY,
 		},
+		left_date: {
+			type: DataTypes.DATEONLY,
+		},
 		repayment_amount: {
 			type: DataTypes.BIGINT,
 		},

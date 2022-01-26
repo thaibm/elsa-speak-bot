@@ -1,8 +1,10 @@
 // Listen in daily-report channel
 
 const { Participators } = require('../dbObjects');
+const { activateParticipator } = require('./participator/activate');
 const { addParticipator } = require('./participator/add');
 const { addDailyReport } = require('./participator/dailyReport');
+const { deactivateParticipator } = require('./participator/deactivate');
 
 module.exports = {
   name: 'messageCreate',
@@ -17,16 +19,15 @@ module.exports = {
         return;
       }
 
+      if (message.content.startsWith('*activate')) {
+        activateParticipator(message, Participators);
+        return;
+      }
+
       // TODO break to new event handling
       if (message.content.startsWith('*deactivate')) {
-        message.mentions.users.each(async user => {
-          try {
-
-          }
-          catch (error) {
-
-          }
-        })
+        deactivateParticipator(message, Participators);
+        return;
       }
 
       // TODO break to new event handling

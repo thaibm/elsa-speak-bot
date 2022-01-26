@@ -7,7 +7,8 @@ module.exports = {
           is_active: true,
           joined_date: new Date()
         })
-        message.reply(`User <@${user.id}> joined Elsa Speak Challenge!`);
+        message.reply(`<@${user.id}> has joined Elsa Speak Challenge!`);
+        message.client.channels.cache.find(channel => channel.id === '934366653830017087').send(`<@${user.id}> has joined Elsa Speak Challenge!`);
       }
       catch (error) {
         if (error.name === 'SequelizeUniqueConstraintError') {
