@@ -7,7 +7,7 @@ module.exports = {
 		.setDescription('Show all participators!'),
 	async execute(interaction) {
 		const participators = await Participators.findAll({ where: { is_active: true } });
-
-		await interaction.reply(`There are ${participators.length} participators in Challenge!`);
+		
+		await interaction.reply(`There are ${participators.length} participators: ${participators.map(p => p.username).join(', ')} in Challenge!`);
 	},
 };

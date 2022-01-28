@@ -11,7 +11,7 @@ module.exports = {
           return message.reply('Something went wrong with saving daily report.');
         }
       }
-      return;
+      return message.reply('Your report is invalid, plz upload your evidence!');
     }
   }
 }

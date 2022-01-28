@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-    is_rejected: {
+		is_rejected: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: false,
 			allowNull: false,
@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
 		attachment_id: {
 			type: DataTypes.STRING,
 			allowNull: false,
-		}
+		},
 	}, {
 		timestamps: true,
-		createdAt: true,
+		createdAt: 'created_at',
 		updatedAt: false
 	});
 };

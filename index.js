@@ -2,8 +2,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const { Op } = require('sequelize');
-const { Participators, DailyReports, Expenses } = require('./dbObjects.js');
+const { token } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({
@@ -40,7 +39,6 @@ for (const file of eventFiles) {
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
-
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
@@ -55,4 +53,5 @@ client.on('interactionCreate', async interaction => {
 });
 
 // Login to Discord with your client's token
-client.login(process.env.DISCORD_TOKEN);
+client.login(token);
+

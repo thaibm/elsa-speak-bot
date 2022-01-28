@@ -4,6 +4,12 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false,
 			unique: true,
+			primaryKey: true,
+		},
+		username: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
 		},
 		is_active: {
 			type: DataTypes.BOOLEAN,
@@ -11,10 +17,10 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		joined_date: {
-			type: DataTypes.DATEONLY,
+			type: DataTypes.DATE,
 		},
 		left_date: {
-			type: DataTypes.DATEONLY,
+			type: DataTypes.DATE,
 		},
 		repayment_amount: {
 			type: DataTypes.BIGINT,
@@ -27,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 		},
 	}, {
 		timestamps: true,
-		createdAt: true,
+		createdAt: 'created_at',
 		updatedAt: false
 	});
 };

@@ -24,22 +24,9 @@ module.exports = {
         return;
       }
 
-      // TODO break to new event handling
       if (message.content.startsWith('*deactivate')) {
         deactivateParticipator(message, Participators);
         return;
-      }
-
-      // TODO break to new event handling
-      if (message.content.startsWith('*activate')) {
-        message.mentions.users.each(async user => {
-          try {
-
-          }
-          catch (error) {
-
-          }
-        })
       }
     }
 
