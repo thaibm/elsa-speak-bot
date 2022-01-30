@@ -16,51 +16,53 @@ const force = process.argv.includes('--force') || process.argv.includes('-f');
 const now = new Date();
 
 sequelize.sync({ force }).then(async () => {
-	// const participators = [
-	// 	Participators.upsert({
-	// 		user_id: '921261168088190997',
-	// 		is_active: 1,
-	// 		joined_date: now,
-	// 		username: 'thai.buiminh'
-	// 	}),
-	// 	Participators.upsert({
-	// 		user_id: '702711279223177296',
-	// 		is_active: 0,
-	// 		joined_date: new Date(now.getTime() - ONE_DAY),
-	// 		username: 'huong.dophu'
-	// 	}),
-	// 	Participators.upsert({
-	// 		user_id: '921593841784590379',
-	// 		is_active: 1,
-	// 		joined_date: new Date(now.getTime() - 2 * ONE_DAY),
-	// 		username: 'linh.vuduc'
-	// 	}),
-	// ];
-	// const dailyReports = [
-	// 	DailyReports.upsert(
-	// 		{
-	// 			user_id: '921261168088190997',
-	// 			attachment_id: '936223136389681182',
-	// 			created_at: now
-	// 		}
-	// 	),
-	// 	DailyReports.upsert(
-	// 		{
-	// 			user_id: '921261168088190997',
-	// 			attachment_id: '921261168088190997',
-	// 			created_at: new Date(now.getTime() - ONE_DAY)
-	// 		}
-	// 	),
-	// 	DailyReports.upsert(
-	// 		{
-	// 			user_id: '921261168088190997',
-	// 			attachment_id: '936223136389681182',
-	// 			created_at: new Date(now.getTime() - 2 * ONE_DAY)
-	// 		}
-	// 	),
-	// ]
+	const participators = [
+		// Participators.upsert({
+		// 	user_id: '921261168088190997',
+		// 	is_active: 1,
+		// 	joined_date: new Date(now.getTime() - ONE_DAY),
+		// 	username: 'thai.buiminh'
+		// }),
+		// Participators.upsert({
+		// 	user_id: '702711279223177296',
+		// 	is_active: 1,
+		// 	joined_date: new Date(now.getTime() - 2 * ONE_DAY),
+		// 	username: 'huong.dophu'
+		// }),
+		// Participators.upsert({
+		// 	user_id: '921593841784590379',
+		// 	is_active: 0,
+		// 	joined_date: new Date(now.getTime() - 3 * ONE_DAY),
+		// 	left_date: new Date(now.getTime() - ONE_DAY),
+		// 	username: 'linh.vuduc'
+		// }),
+	];
 
-	// await Promise.all([...participators, ...dailyReports]);
+	const dailyReports = [
+		// DailyReports.upsert(
+		// 	{
+		// 		user_id: '921261168088190997',
+		// 		attachment_id: '936223136389681182',
+		// 		created_at: now
+		// 	}
+		// ),
+		// DailyReports.upsert(
+		// 	{
+		// 		user_id: '921261168088190997',
+		// 		attachment_id: '921261168088190997',
+		// 		created_at: new Date(now.getTime() - ONE_DAY)
+		// 	}
+		// ),
+		// DailyReports.upsert(
+		// 	{
+		// 		user_id: '921261168088190997',
+		// 		attachment_id: '936223136389681182',
+		// 		created_at: new Date(now.getTime() - 2 * ONE_DAY)
+		// 	}
+		// ),
+	]
+
+	await Promise.all([...participators, ...dailyReports]);
 
 	console.log('Database synced');
 

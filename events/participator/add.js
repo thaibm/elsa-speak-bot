@@ -4,6 +4,7 @@ module.exports = {
       try {
         await Participators.create({
           user_id: user.id,
+          username: user.username,
           is_active: true,
           joined_date: new Date()
         })

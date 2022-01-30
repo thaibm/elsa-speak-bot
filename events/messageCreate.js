@@ -13,7 +13,7 @@ module.exports = {
     if (message.author.bot) return;
 
     // Add User into Challenge
-    if (message.member.roles.cache.some(r => r.name === 'ADMIN')) {
+    if (message.member?.roles?.cache?.some(r => r.name === 'ADMIN')) {
       if (message.content.startsWith('*add')) {
         addParticipator(message, Participators);
         return;

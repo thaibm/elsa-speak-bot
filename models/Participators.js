@@ -24,12 +24,15 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		repayment_amount: {
 			type: DataTypes.BIGINT,
+			defaultValue: 0,
 		},
 		paid_amount: {
 			type: DataTypes.BIGINT,
+			defaultValue: 0,
 		},
 		prize_amount: {
 			type: DataTypes.BIGINT,
+			defaultValue: 0,
 		},
 	}, {
 		timestamps: true,
