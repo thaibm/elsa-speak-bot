@@ -6,9 +6,9 @@ module.exports = {
     .setName('yesterday-check')
     .setDescription('Check participator yesterday reports!'),
   async execute(interaction) {
-    const message = await ytdCheck();
+    const { message } = await ytdCheck();
 
-    await interaction.client.channels.cache.find(channel => channel.id === '934366653830017087').send(message);
+    // await interaction.client.channels.cache.find(channel => channel.id === '934366653830017087').send(message);
     await interaction.reply(message);
   },
 };

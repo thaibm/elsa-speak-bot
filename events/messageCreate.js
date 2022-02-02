@@ -31,7 +31,7 @@ module.exports = {
     }
 
     // Save Daily report
-    if (message.channel.name === 'daily-report' && message.content.startsWith('*daily') && message.attachments) {
+    if (message.channel.name === 'daily-report' || message.channel.name === 'management' && message.content.startsWith('*daily') && message.attachments) {
       addDailyReport(message, Participators);
     }
   },

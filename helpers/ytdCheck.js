@@ -35,7 +35,7 @@ module.exports = {
       ]
     });
 
-    const missedReportParticipators = participators.filter(participator => !participator.daily_reports.length)
+    const missedReportParticipators = participators.filter(participator => !participator.daily_reports.length) || [];
 
     let message = '';
     if (missedReportParticipators?.length) {
@@ -44,6 +44,6 @@ module.exports = {
     } else {
       message = `Yesterday, everyone sent daily report! Congrats!`
     }
-    return message;
+    return { message, participators: missedReportParticipators.map(p => p.user_id) };
   }
 }

@@ -26,6 +26,6 @@ Gồm những lần quên nộp trong tháng (ngày, đã nộp phạt cho ngày
 1. `npm install`
 2. Add .env file contain DISCORD_TOKEN 
 3. Add config file contain token, clientId, guildId
-4. Init db on local: `npm run init-db`
+4. Init db on local: `npm run db-init`
 5. Deploy command to discord app `npm run deploy-command`
 6. Start bot on local `npm start`

@@ -16,7 +16,11 @@ Participators.hasMany(DailyReports, { foreignKey: 'user_id' });
 
 Reflect.defineProperty(Participators.prototype, 'addDailyReport', {
 	value: async function addDailyReport(attachmentId) {
-		return DailyReports.create({ user_id: this.user_id, is_rejected: false, attachment_id: attachmentId, created_at: new Date() });
+		return DailyReports.create({
+			user_id: this.user_id, is_rejected: false,
+			attachment_id: attachmentId,
+			created_at: new Date()
+		});
 	},
 });
 
