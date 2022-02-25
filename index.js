@@ -2,7 +2,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('./config.json');
+// const { token } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({
@@ -53,5 +53,5 @@ client.on('interactionCreate', async interaction => {
 });
 
 // Login to Discord with your client's token
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
 
